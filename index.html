@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Kadam | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #e5e7eb; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glow-blue { background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(5, 5, 5, 0) 70%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); border-color: rgba(37, 99, 235, 0.4); }
+        .toast { transform: translateX(-50%) translateY(100px); transition: transform 0.3s ease-in-out; }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+    </style>
+</head>
+<body class="selection:bg-blue-500/30">
+
+    <div id="toast" class="fixed bottom-10 left-1/2 toast z-50 glass px-6 py-3 rounded-full text-blue-400 font-medium flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-5 h-5"></i> Copied to clipboard!
+    </div>
+
+    <nav class="fixed top-0 w-full z-40 glass border-t-0 border-x-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">VK.</span>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#stack" class="hover:text-white transition">Skills</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#certifications" class="hover:text-white transition">Certifications</a>
+                <a href="#extracurricular" class="hover:text-white transition">Activities</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+            <button class="md:hidden" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass border-none flex flex-col items-center gap-6 py-8">
+            <a href="#home" onclick="toggleMenu()">Home</a>
+            <a href="#projects" onclick="toggleMenu()">Projects</a>
+            <a href="#stack" onclick="toggleMenu()">Skills</a>
+            <a href="#experience" onclick="toggleMenu()">Experience</a>
+            <a href="#certifications" onclick="toggleMenu()">Certifications</a>
+            <a href="#extracurricular" onclick="toggleMenu()">Activities</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 glow-blue"></div>
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                    Vaishnavi <span class="text-blue-500">Kadam</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-lg">
+                    MMS (IT) Student | Aspiring Software Developer & Data Analyst. 
+                    Merging software engineering with analytical insights.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#projects" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition">View Projects</a>
+                    <button onclick="copyEmail()" class="px-8 py-3 glass rounded-lg font-semibold flex items-center gap-2 group">
+                        Email Me <i data-lucide="copy" class="w-4 h-4 group-hover:text-blue-400"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl border-2 border-blue-500/20 rotate-3 overflow-hidden glass p-2">
+                    <img src="vaishu.jpeg" alt="Vaishnavi Kadam" class="w-full h-full object-cover rounded-xl -rotate-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───────────── PROJECTS ───────────── -->
+    <section id="projects" class="py-24 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">Featured Projects</h2>
+        <p class="text-gray-400 text-center mb-12 text-sm">A selection of things I've built and analysed.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Travel Tour Website -->
+            <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="p-2 rounded-lg bg-blue-500/10">
+                        <i data-lucide="globe" class="w-5 h-5 text-blue-400"></i>
+                    </div>
+                    <a href="https://travell-e52db3.netlify.app" target="_blank"
+                       class="flex items-center gap-1 text-xs font-medium text-blue-400 glass px-3 py-1.5 rounded-full hover:bg-blue-500/10 transition">
+                        Live <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Travel Tour Website</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Responsive travel booking platform integrated with Google Apps Script for lead management.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto pt-2 border-t border-white/5">
+                    <span class="text-xs px-2 py-1 rounded-md bg-blue-500/10 text-blue-300">HTML/CSS</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-blue-500/10 text-blue-300">JS</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-blue-500/10 text-blue-300">Bootstrap</span>
+                </div>
+            </div>
+
+            <!-- Hand Gesture LED Control -->
+            <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="p-2 rounded-lg bg-purple-500/10">
+                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Hand Gesture LED Control</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">A real-time AI system using OpenCV and Python to control hardware via Arduino.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto pt-2 border-t border-white/5">
+                    <span class="text-xs px-2 py-1 rounded-md bg-purple-500/10 text-purple-300">Python</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-purple-500/10 text-purple-300">OpenCV</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-purple-500/10 text-purple-300">Arduino</span>
+                </div>
+            </div>
+
+            <!-- Tableau Dashboard -->
+            <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="p-2 rounded-lg bg-cyan-500/10">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 text-cyan-400"></i>
+                    </div>
+                    <a href="https://canva.link/st1j6lkvy5d9g9d" target="_blank"
+                       class="flex items-center gap-1 text-xs font-medium text-cyan-400 glass px-3 py-1.5 rounded-full hover:bg-cyan-500/10 transition">
+                        View <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Tableau Dashboard</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Interactive data visualizations and business intelligence dashboards built in Tableau.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto pt-2 border-t border-white/5">
+                    <span class="text-xs px-2 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Tableau</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Data Viz</span>
+                </div>
+            </div>
+
+            <!-- Power BI Dashboard -->
+            <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="p-2 rounded-lg bg-yellow-500/10">
+                        <i data-lucide="pie-chart" class="w-5 h-5 text-yellow-400"></i>
+                    </div>
+                    <a href="https://canva.link/st1j6lkvy5d9g9d" target="_blank"
+                       class="flex items-center gap-1 text-xs font-medium text-yellow-400 glass px-3 py-1.5 rounded-full hover:bg-yellow-500/10 transition">
+                        View <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Power BI Dashboard</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Business analytics reports and KPI tracking dashboards created with Microsoft Power BI.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto pt-2 border-t border-white/5">
+                    <span class="text-xs px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-300">Power BI</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-300">Analytics</span>
+                </div>
+            </div>
+
+            <!-- Excel Dashboard -->
+            <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="p-2 rounded-lg bg-green-500/10">
+                        <i data-lucide="table-2" class="w-5 h-5 text-green-400"></i>
+                    </div>
+                    <a href="https://canva.link/st1j6lkvy5d9g9d" target="_blank"
+                       class="flex items-center gap-1 text-xs font-medium text-green-400 glass px-3 py-1.5 rounded-full hover:bg-green-500/10 transition">
+                        View <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Excel Dashboard</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Dynamic Excel dashboards with pivot tables, charts, and automated reporting for data analysis.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto pt-2 border-t border-white/5">
+                    <span class="text-xs px-2 py-1 rounded-md bg-green-500/10 text-green-300">Excel</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-green-500/10 text-green-300">Pivot Tables</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-green-500/10 text-green-300">Charts</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ───────────── SKILLS ───────────── -->
+    <section id="stack" class="py-24 bg-[#080808]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">Skills</h2>
+            <p class="text-gray-400 text-center mb-12 text-sm">What I work with, day in and day out.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="glass rounded-2xl p-6 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 mb-1">
+                        <div class="p-2 rounded-lg bg-blue-500/10">
+                            <i data-lucide="code-2" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h4 class="text-white font-semibold">Technical &amp; Development</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">C</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">C++</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">Java</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">Python</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">HTML</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">CSS</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300">Google Apps Script</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-6 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 mb-1">
+                        <div class="p-2 rounded-lg bg-cyan-500/10">
+                            <i data-lucide="database" class="w-5 h-5 text-cyan-400"></i>
+                        </div>
+                        <h4 class="text-white font-semibold">Database &amp; Analytics</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">MySQL</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Data Cleaning</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Data Visualization</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Reporting</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Power BI</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Tableau</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Advanced Excel</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">Pivot Tables</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300">VLOOKUP</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-6 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 mb-1">
+                        <div class="p-2 rounded-lg bg-purple-500/10">
+                            <i data-lucide="wrench" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <h4 class="text-white font-semibold">Tools &amp; Productivity</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">Canva</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">Microsoft Excel</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">MS Word</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">MS PowerPoint</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">Microsoft Office Suite</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">StarUML</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300">VS Code</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-6 flex flex-col gap-4">
+                    <div class="flex items-center gap-3 mb-1">
+                        <div class="p-2 rounded-lg bg-green-500/10">
+                            <i data-lucide="users" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h4 class="text-white font-semibold">Project Management &amp; Soft Skills</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Project Planning</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Reporting &amp; Presentation</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Leadership</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Team Collaboration</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">English</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Hindi</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Marathi</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Analytical Thinking</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Problem Solving</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-green-500/10 text-green-300">Time Management</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ───────────── EDUCATION TIMELINE ───────────── -->
+    <section id="experience" class="py-24 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">Professional Timeline</h2>
+        <p class="text-gray-400 text-center mb-16 text-sm">My academic journey, step by step.</p>
+
+        <div class="relative">
+            <div class="absolute left-[7px] top-2 bottom-2 w-px bg-blue-500/20"></div>
+            <div class="space-y-10">
+
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)] flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="text-xs font-mono text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full">Present</span>
+                            <span class="text-xs text-gray-500">Pursuing</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Master of Management Studies (MMS – IT)</h3>
+                        <p class="text-sm text-blue-300 mt-0.5">Rajeev Gandhi College of Management Studies</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-gray-600 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="text-xs font-mono text-gray-400 bg-white/5 px-2.5 py-1 rounded-full">2025</span>
+                            <span class="text-xs font-semibold text-green-400 bg-green-500/10 px-2.5 py-1 rounded-full">CGPA: 9.32 / 10</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Bachelor of Science in Information Technology (B.Sc IT)</h3>
+                        <p class="text-sm text-blue-300 mt-0.5">JES College of Commerce, Science and Information Technology</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-gray-600 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="text-xs font-mono text-gray-400 bg-white/5 px-2.5 py-1 rounded-full">2022</span>
+                            <span class="text-xs font-semibold text-yellow-400 bg-yellow-500/10 px-2.5 py-1 rounded-full">49.17%</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Higher Secondary Certificate (HSC – Science)</h3>
+                        <p class="text-sm text-blue-300 mt-0.5">Sathaye College</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-gray-600 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="text-xs font-mono text-gray-400 bg-white/5 px-2.5 py-1 rounded-full">2020</span>
+                            <span class="text-xs font-semibold text-green-400 bg-green-500/10 px-2.5 py-1 rounded-full">82.60%</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Secondary School Certificate (SSC)</h3>
+                        <p class="text-sm text-blue-300 mt-0.5">Sri Sathya Sai Madhyamik Vidya Mandir</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ───────────── CERTIFICATIONS ───────────── -->
+    <section id="certifications" class="py-24 bg-[#080808]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">Certifications</h2>
+            <p class="text-gray-400 text-center mb-12 text-sm">Credentials, courses & programs I've completed.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Java Full Stack -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-orange-500/10">
+                            <i data-lucide="code-2" class="w-5 h-5 text-orange-400"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-orange-400 bg-orange-500/10 px-2.5 py-1 rounded-full">Grade: A</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Advanced Program in Java Full Stack Development</h3>
+                        <p class="text-xs text-blue-300 mb-1">Anudip Foundation for Social Welfare</p>
+                        <p class="text-xs text-gray-500">Jan 2025 – May 2025 · 407 Hours</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Intensive full-stack training in Java, web application development, frontend-backend integration, and SDLC concepts.</p>
+                </div>
+
+                <!-- Rail Kaushal Vikas Yojana -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-blue-500/10">
+                            <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">2023</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Rail Kaushal Vikas Yojana – Electronics & Instrumentation</h3>
+                        <p class="text-xs text-blue-300 mb-1">Electrical Training Centre, Virar</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Completed basic technical training in electronics systems and instrumentation.</p>
+                </div>
+
+                <!-- Advanced Excel -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-green-500/10">
+                            <i data-lucide="table-2" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">Jan–Nov 2021</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Advanced Excel Certification</h3>
+                        <p class="text-xs text-blue-300 mb-1">SHED – Society for Human and Environmental Development</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Expertise in Pivot Tables, VLOOKUP/XLOOKUP, Charts, and Conditional Formatting for data analysis and reporting.</p>
+                </div>
+
+                <!-- Youth Leadership -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-yellow-500/10">
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">21 Jan 2025</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Youth Leadership & Career Development Workshop – Viksit Bharat</h3>
+                        <p class="text-xs text-blue-300 mb-1">Ratan Tata Maharashtra State Skills University</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Strengthened leadership, career planning, and professional development competencies.</p>
+                </div>
+
+                <!-- Extension Student Managers -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-purple-500/10">
+                            <i data-lucide="users" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">2024</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Second Term Training – Extension Student Managers</h3>
+                        <p class="text-xs text-blue-300 mb-1">University of Mumbai</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Focused on career development initiatives, coordination, and community engagement programs.</p>
+                </div>
+
+                <!-- AI & Ethical Research Integrity -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-cyan-500/10">
+                            <i data-lucide="brain" class="w-5 h-5 text-cyan-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">11 Oct 2025</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">AI & Ethical Research Integrity Webinar</h3>
+                        <p class="text-xs text-blue-300 mb-1">Rajeev Gandhi College of Management Studies</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Explored ethical AI practices, research governance, and responsible technology implementation.</p>
+                </div>
+
+                <!-- World Investor Week -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-emerald-500/10">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-emerald-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">9 Oct 2025</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">World Investor Week (WIW) – Financial Awareness</h3>
+                        <p class="text-xs text-blue-300 mb-1">National Institute of Securities Markets</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Participated in investor education and financial literacy initiative.</p>
+                </div>
+
+                <!-- Spoken English -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-pink-500/10">
+                            <i data-lucide="mic" class="w-5 h-5 text-pink-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">2022</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Spoken English Training</h3>
+                        <p class="text-xs text-blue-300 mb-1">LearnVern</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Enhanced professional communication and presentation skills.</p>
+                </div>
+
+                <!-- Community Service -->
+                <div class="glass rounded-2xl p-6 card-hover flex flex-col gap-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="p-2 rounded-lg bg-rose-500/10">
+                            <i data-lucide="heart" class="w-5 h-5 text-rose-400"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">Sep–Oct 2025 · 20 Hrs</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Community Service</h3>
+                        <p class="text-xs text-blue-300 mb-1">Aarine Foundation</p>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Contributed to structured social development initiatives.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ───────────── EXTRACURRICULAR ───────────── -->
+    <section id="extracurricular" class="py-24 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">Extracurricular Activities</h2>
+        <p class="text-gray-400 text-center mb-12 text-sm">Roles, responsibilities & community involvement beyond the classroom.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
+                <div class="p-2.5 rounded-xl bg-blue-500/10 shrink-0">
+                    <i data-lucide="user-check" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm">Student Representative</h4>
+                    <p class="text-xs text-blue-300 mt-0.5">RGCMS, Ghansoli</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
+                <div class="p-2.5 rounded-xl bg-purple-500/10 shrink-0">
+                    <i data-lucide="crown" class="w-5 h-5 text-purple-400"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm">Student Council Member & Hospitality Secretary</h4>
+                    <p class="text-xs text-blue-300 mt-0.5">JES College</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
+                <div class="p-2.5 rounded-xl bg-green-500/10 shrink-0">
+                    <i data-lucide="clipboard-list" class="w-5 h-5 text-green-400"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm">DLLE Student Manager</h4>
+                    <p class="text-xs text-blue-300 mt-0.5">JES College · 1 Year</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
+                <div class="p-2.5 rounded-xl bg-yellow-500/10 shrink-0">
+                    <i data-lucide="hand-helping" class="w-5 h-5 text-yellow-400"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm">DLLE Volunteer</h4>
+                    <p class="text-xs text-blue-300 mt-0.5">JES College · 2 Years</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4 sm:col-span-2">
+                <div class="p-2.5 rounded-xl bg-pink-500/10 shrink-0">
+                    <i data-lucide="share-2" class="w-5 h-5 text-pink-400"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm">Digital Media Member</h4>
+                    <p class="text-xs text-blue-300 mt-0.5">RGCMS, Ghansoli</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<footer id="contact" class="py-20 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+
+    <div class="flex justify-center gap-8 mb-10 text-lg">
+
+      <a href="mailto:vaishnavi.kadam.5648@gmail.com"
+         class="hover:text-green-400 transition">
+        Email
+      </a>
+
+      <a href="https://www.linkedin.com/in/vaishnavi-kadam-584075381"
+         target="_blank"
+         class="hover:text-blue-400 transition">
+        LinkedIn
+      </a>
+
+      <a href="https://github.com/vaishuk5648"
+         target="_blank"
+         class="hover:text-gray-300 transition">
+        GitHub
+      </a>
+
+      <a href="https://www.instagram.com/vaishnavi.kadam.5648"
+         target="_blank"
+         class="hover:text-pink-400 transition">
+        Instagram
+      </a>
+
+    </div>
+
+    <p class="text-gray-500 text-sm">
+      © 2026 Vaishnavi Mahendra Kadam. Built with Passion & Tailwind.
+    </p>
+  </div>
+</footer>
+</body>
+</html>
